@@ -17,7 +17,8 @@ module.exports = {
       },
       dropShadow: {
         'bold-shadow': '0 6px 6px rgba(255, 255, 255, 0.7)',
-      },
+        'green-shadow': '0 4px 4  px rgba(174,178,153, 1)',
+      }
     },
     screens: {
       xs: "480px",

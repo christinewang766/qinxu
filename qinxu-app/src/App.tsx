@@ -9,7 +9,10 @@ import Green from "@/assets/green-plaid.png";
 import Button from "@/assets/button.png";
 import Movie from "@/assets/fish.gif";
 import Clouds from "@/assets/qinxu-clouds.gif";
+import Memo from "@/assets/memo.png";
 import { useGeoLocation } from "./useGeoLocation";
+import Popup from "reactjs-popup";
+import { useState } from "react";
 
 function distance(lat: number, lng: number) {
   var p = 0.017453292519943295; // Math.PI / 180
@@ -22,12 +25,10 @@ function distance(lat: number, lng: number) {
   return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
 }
 
-function note() {
-  alert("I am an alert box!");
-}
-
 function App() {
   const location = useGeoLocation();
+  const [open, setOpen] = useState(false);
+  const closeModal = () => setOpen(false);
 
   return (
     <>
@@ -40,11 +41,20 @@ function App() {
         <div className="container grid max-w-full grid-cols-2">
           <div className="grid h-[90vh] max-w-full grid-rows-2 content-center justify-center align-middle">
             <div className="flex flex-row">
-              <img
-                src={IG}
-                className="ml-[20px] h-auto max-w-[40%] pt-[10px]"
-                alt="ig post"
-              />
+              <div className="mt-[5%] grid-rows-2">
+                <img
+                  src={IG}
+                  className="ml-[20%] h-auto max-w-[70%] pb-[20px] pt-[10px] drop-shadow-green-shadow"
+                  alt="ig post"
+                />
+                <audio
+                  src="https://dl.dropbox.com/s/j8xgjm19l737mri/qinxu.mp3"
+                  controls
+                  className="ml-[15%] rounded-full border-[10px]
+              border-frog"
+                />
+              </div>
+
               <div className="grid max-w-full grid-rows-2 content-center justify-center">
                 <div className="flex flex-col items-center justify-center pt-[150px]">
                   <img
@@ -77,13 +87,21 @@ function App() {
                 />
               </div>
 
-              <div className="hidden relative group-hover:flex">
+              <div className="relative hidden group-hover:flex">
                 <img
                   src={Green}
                   className="ml-[20px] mt-[10px] max-h-[92%] min-w-[80%] items-center justify-center rounded-[1rem] border-[20px] border-frog hover:bg-white"
                   alt="Movie"
                 />
-                <h1 className="absolute text-md text-dark top-[40%] left-[45%] -translate-x-1/3 -translate-y-3/4 font-poppins">"Kimi no Na wa" reminds me of our friendship! If you haven't seen it, it's about two strangers who switch bodies and save a town. It refers to the Red String of Fate--which is where we come in. I'm so lucky to have you as a friend, and even though we've never met IRL, I feel like we've known each other for many alifetimes. Thank you for always staying connected with me.</h1>
+                <h1 className="text-md absolute left-[45%] top-[40%] -translate-x-1/3 -translate-y-3/4 font-poppins text-dark">
+                  "Kimi no Na wa" reminds me of our friendship! If you haven't
+                  seen it, it's about two strangers who switch bodies and save a
+                  town. It refers to the Red String of Fate--which is where we
+                  come in. I'm so lucky to have you as a friend, and even though
+                  we've never met IRL, I feel like we've known each other for
+                  many lifetimes. Thank you for always staying connected with
+                  me.
+                </h1>
               </div>
             </div>
           </div>
@@ -108,14 +126,20 @@ function App() {
           className="absolute bottom-0 ml-[40%] max-h-[50%]"
           alt="Qinxu"
         />
+
         <button>
           <img
             src={Button}
-            className="absolute right-6 top-12 max-h-[120px] rotate-[-25deg]"
+            className="absolute right-6 top-6 max-w-[120px]"
             alt="button"
-            onClick={note}
+            onClick={() => setOpen(!open)}
           />
         </button>
+        <Popup open={open} closeOnEscape onClose={closeModal}>
+          <div className="flex align-middle justify-center items-center">
+              <img src={Memo} onClick={closeModal} className="max-w-[65%]" alt="memo" />
+          </div>
+        </Popup>
       </div>
     </>
   );
