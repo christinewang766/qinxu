@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "dark": "#302830",
-        "frog": "#76815B",
+        "frog": "#AEB299",
         "light": "#D9DBD8",
       },
       backgroundImage: () => ({

@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    cursor: url(bow.gif), auto;
+  }
+  
+  a {
+    cursor: url(bow.gif), auto;
+  }
