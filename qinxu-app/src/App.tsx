@@ -1,8 +1,10 @@
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "./App.css";
 import PlaidBorder from "@/assets/border.png";
 import IG from "@/assets/ig.png";
+import IG2 from "@/assets/ig2.png";
 import Love from "@/assets/iluvu.png";
+import Love2 from "@/assets/iluvu2.png";
 import Christine from "@/assets/christine-profile.png";
 import Qinxu from "@/assets/qinxu-profile.png";
 import Green from "@/assets/green-plaid.png";
@@ -30,6 +32,9 @@ function App() {
   const [open, setOpen] = useState(false);
   const closeModal = () => setOpen(false);
 
+  const [flipIG, setFlipIG] = useState(false);
+  const [flipLuv, setFlipLuv] = useState(false);
+
   return (
     <>
       <div className="max-h-screen overflow-hidden bg-desktop-home bg-cover bg-center bg-no-repeat">
@@ -42,11 +47,14 @@ function App() {
           <div className="grid h-[90vh] max-w-full grid-rows-2 content-center justify-center align-middle">
             <div className="flex flex-row">
               <div className="mt-[5%] grid-rows-2">
-                <img
-                  src={IG}
-                  className="ml-[20%] h-auto max-w-[70%] pb-[20px] pt-[10px] drop-shadow-green-shadow"
+                <motion.img
+                  src={(flipIG ? IG2 : IG)}
+                  id="imgClickAndChange"
+                  className="ml-[20%] h-auto max-w-[60%] pb-[20px] pt-[10px] drop-shadow-green-shadow"
                   alt="ig post"
-                />
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setFlipIG(!flipIG)}/>
                 <audio
                   src="https://dl.dropbox.com/s/j8xgjm19l737mri/qinxu.mp3"
                   controls
@@ -57,11 +65,13 @@ function App() {
 
               <div className="grid max-w-full grid-rows-2 content-center justify-center">
                 <div className="flex flex-col items-center justify-center pt-[150px]">
-                  <img
-                    src={Love}
-                    className="max-w-[70%] items-center justify-center object-contain pb-[20px] pl-[15px] pt-[10px] drop-shadow-bold-shadow"
+                  <motion.img
+                  src={(flipLuv ? Love2 : Love)}
+                    className="max-w-[80%] items-center justify-center object-contain pb-[20px] pl-[15px] pt-[10px] drop-shadow-bold-shadow"
                     alt="i luv you"
-                  />
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  onClick={() => setFlipLuv(!flipLuv)}/>
                   <div className="flex max-w-[70%] items-center justify-center rounded-[1rem] border-[7px] border-dark bg-frog p-3 drop-shadow-bold-shadow">
                     <div className="text-md flex items-center justify-center rounded-[1rem] border-4 border-dotted border-dark bg-light p-3 text-dark">
                       christine misses you from{" "}
@@ -128,16 +138,23 @@ function App() {
         />
 
         <button>
-          <img
+          <motion.img
             src={Button}
             className="absolute right-6 top-6 max-w-[120px]"
             alt="button"
             onClick={() => setOpen(!open)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           />
         </button>
         <Popup open={open} closeOnEscape onClose={closeModal}>
-          <div className="flex align-middle justify-center items-center">
-              <img src={Memo} onClick={closeModal} className="max-w-[65%]" alt="memo" />
+          <div className="flex items-center justify-center align-middle">
+            <img
+              src={Memo}
+              onClick={closeModal}
+              className="max-w-[65%]"
+              alt="memo"
+            />
           </div>
         </Popup>
       </div>
