@@ -16,22 +16,13 @@ export const useGeoLocation = () => {
         });
     };
     
-    const onError = error => {
-        setLocation({
-            loaded: true,
-            error,
-        });
-    }
 
     useEffect(() => {
         if(!("geolocation" in navigator)){
-            onError({
-                code: 0,
-                message: "Geolocation not supported",
-            });
+            alert("Geolocation not supported");
         }
 
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        navigator.geolocation.getCurrentPosition(onSuccess);
     }, []);
 
   return location;

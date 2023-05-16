@@ -3,15 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://christinewang766.github.io/qinxu",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "framer-motion": "^10.12.10",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap-icons": "^1.10.3",
