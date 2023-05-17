@@ -1,2 +1,27 @@
 # for qinxu <3
 Live site is deployed at: http://forqinxu.netlify.app/
+
+##Playlist Timestamps
+1) Coffee - Beabadoobee [00:00 - 02:00]
+2) Cloud 9 - Beach Bunny [02:01 - 04:31]
+3) 再也没有 (Never again - Zai Ye Mei You) - Ryan.BAY 杨佬叁 [04:31 - 08:02]
+4)  yin to yang - runo plum [08:03 - 11:29]
+5) 水星 feat,仮谷せいら - Tofubeats [11:30 - 16:04]
+6) Can You Hear the Whistle Blow - Default [16:05 - 20:08]
+7) Sofia - Clairo [20:09 - 23:20]
+8) Dancing with my phone [23:21 - 26:43]
+9) Dog Days Are Over - Florence The Machine [26:44 - 30:26]
+10) Absence of You [30:27 - 33:43]
+11) Everybody Wants To Love You - Japanese Breakfast [33:44 - 35:53]
+12) 歌詞付き踊り子 - Vaundy [35:54 - 40:02]
+13) The Night We Met - Lord Huron [40:03 - 43:29]
+14) talkin' to you - mabanua [43:30 - 48:24]
+15) Kakatte Koi Yo - NakamuraEmi [48:25 - 52:05 there's a big silent pause at the end] 
+16) Lover Boy - Phum Viphurit [52:06 - 56:05]
+17) Welcome Home, Son - Radical Face [56:06 - 1:00:50]
+18) 日常的鏡頭 - The Chairs [1:00:51 - 1:05:05]
+19) Swimming - Lunar Vacation [1:05:06 - 1:09:40]
+20) Take Me Dancing - Will Joseph Cook [1:09:41 - 1:12:54]
+21)  ブルーベリーハニー - WurtS [1:12:55 - 1:15:47]
+22) Chanel - Frank Ocean [1:15:48 - 1:19:20]
+23) O Louco Sempre Tem Razao - Walfredo Em Busca da Simbiose [1:19:21 - 1:25:35]
